@@ -10,6 +10,7 @@ module.exports = function configureBabel(api) {
           alias: {
             '@store': './src/store',
             '@features/*': './src/features/*',
+            '@screens/*': './src/screens/*',
           },
         },
       ],

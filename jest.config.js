@@ -8,5 +8,6 @@ module.exports = {
   moduleNameMapper: {
     '@store': '<rootDir>/src/store',
     '@features/(.*)': '<rootDir>/src/features/$1',
+    '@screens/(.*)': '<rootDir>/src/screens/$1',
   },
 };
