@@ -4,7 +4,8 @@ Tech Stack:
 
 - React Native + Expo
 - Typescript
+- Redux (Global State Handling)
+- Jest (Unitary Tests)
 - ESlint (Code Guidelines)
 - Prettier (Code Formatting)
-- Jest (Unitary Tests)
 - Github Actions Workflows
