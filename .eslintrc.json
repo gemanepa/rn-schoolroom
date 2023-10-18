@@ -50,7 +50,8 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
         "alias": {
           "@store": "./src/store",
-          "@features": "./src/features"
+          "@features": "./src/features",
+          "@screens": "./src/screens"
         }
       }
     }

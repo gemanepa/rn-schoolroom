@@ -16,8 +16,8 @@
     "baseUrl": "./",
     "paths": {
       "@store": ["./src/store.ts"],
-      "@features/*": ["./src/features/*"]
-      // Add more paths as needed
+      "@features/*": ["./src/features/*"],
+      "@screens/*": ["./src/screens/*"]
     }
   },
   "exclude": ["node_modules"]

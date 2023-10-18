@@ -1,26 +1,34 @@
 import { Provider } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { store } from '@store';
-import Counter from '@features/counter/components/Counter';
+import { NavigationContainer } from '@react-navigation/native';
+import RoomsOverviewScreen from '@screens/rooms-overview';
+import AddRoomScreen from '@screens/add-room';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export type RootStackParamList = {
+  RoomsOverview: undefined;
+  RoomDetails: undefined;
+  AddRoom: undefined;
+  AddStudent: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <Counter />
-        <StatusBar style="auto" />
-      </View>
+      <StatusBar style="auto" />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="RoomsOverview"
+            component={RoomsOverviewScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen name="AddRoom" component={AddRoomScreen} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </Provider>
   );
 }
