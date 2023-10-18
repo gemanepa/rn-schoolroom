@@ -15,7 +15,7 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "@store": ["./store.ts"],
+      "@store": ["./src/store.ts"],
       "@features/*": ["./src/features/*"]
       // Add more paths as needed
     }

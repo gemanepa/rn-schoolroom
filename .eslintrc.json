@@ -49,7 +49,7 @@
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
         "alias": {
-          "@store": "./store",
+          "@store": "./src/store",
           "@features": "./src/features"
         }
       }
