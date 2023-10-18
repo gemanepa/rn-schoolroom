@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { store } from '@store';
 import Counter from '@features/counter/components/Counter';
 
@@ -17,6 +17,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <View style={styles.container}>
+        <Text>Open up App.tsx to start working on your app!</Text>
         <Counter />
         <StatusBar style="auto" />
       </View>

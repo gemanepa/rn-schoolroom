@@ -8,7 +8,7 @@ module.exports = function configureBabel(api) {
         {
           root: ['./'],
           alias: {
-            '@store': './store',
+            '@store': './src/store',
             '@features/*': './src/features/*',
           },
         },

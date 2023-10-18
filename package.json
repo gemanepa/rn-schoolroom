@@ -11,7 +11,8 @@
     "format:check": "prettier --check \"**/*.{js,ts,tsx,md,json}\"",
     "format": "prettier --write \"**/*.{js,ts,tsx,md,json}\"",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "checks": "npm run format:check && npm run lint && npm run test"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.19.3",
