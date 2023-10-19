@@ -7,6 +7,7 @@ interface DetailItemProps {
 }
 
 function DetailItem({ label, value }: DetailItemProps) {
+  if (!value) return null;
   return (
     <View className="mb-4">
       <Text className="font-bold text-base mb-1">{label}:</Text>

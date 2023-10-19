@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import type { Room } from '@t/business';
 
 function RoomStudents({ students }: { students: Room['students'] }) {
+  if (!students.length) return null;
   return (
     <View className="mb-1">
       <Text className="mb-1 text-base font-bold">Students:</Text>
