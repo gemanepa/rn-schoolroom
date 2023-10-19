@@ -32,6 +32,8 @@ const useMockData = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    const isDevEnv = process.env.NODE_ENV === 'development';
+    if (!isDevEnv) return;
     if (rooms.length > 0) return;
 
     const mappedData = mapMockDataToRooms(mock as Room[]);
