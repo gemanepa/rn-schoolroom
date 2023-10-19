@@ -1,20 +1,26 @@
+import { Provider } from 'react-redux';
+import { PaperProvider } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { store } from '@store/index';
+import useMockData from '@lib/hooks/useMockData';
+import Navigation from '@screens/index';
 
-export default function App() {
+function App() {
+  useMockData();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <PaperProvider>
       <StatusBar style="auto" />
-    </View>
+      <Navigation />
+    </PaperProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function StoreProvider() {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+}
+
+export default StoreProvider;

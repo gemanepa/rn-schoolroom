@@ -1,0 +1,64 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "prettier"
+  ],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "react", "react-native", "jest"],
+  "rules": {
+    // disallow missing React when using JSX
+    "react/react-in-jsx-scope": "off",
+
+    // style-prop-object doesn't get along with React Native StyleSheet module
+    "react/style-prop-object": "off",
+
+    "import/no-extraneous-dependencies": "off",
+
+    "import/no-unresolved": "off",
+
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-unused-vars": "off",
+
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "root": true,
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "alias": {
+          "@store": "./src/store",
+          "@lib": "./src/lib",
+          "@features": "./src/features",
+          "@screens": "./src/screens",
+          "@t": "./types"
+        }
+      }
+    }
+  }
+}
