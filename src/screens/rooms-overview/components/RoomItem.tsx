@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import { List, useTheme } from 'react-native-paper';
 import { RoomsOverviewScreenNavigationProp } from '@t/navigation';
 import type { Room } from '@t/business';
@@ -24,7 +24,8 @@ function RoomItem({ room }: RoomItemProps) {
     >
       <List.Item
         key={room.roomId}
-        title={room.name}
+        // eslint-disable-next-line react/no-unstable-nested-components
+        title={() => <Text className="font-bold text-base pb-1">{room.name}</Text>}
         description={room.location}
         // eslint-disable-next-line react/jsx-props-no-spreading, react/no-unstable-nested-components
         right={(props) => <List.Icon {...props} icon="chevron-right" />}

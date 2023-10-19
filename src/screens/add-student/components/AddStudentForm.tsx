@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
-import { TextInput, Text, Button, RadioButton, useTheme } from 'react-native-paper';
+import { ScrollView } from 'react-native';
+import { TextInput, Text, Button } from 'react-native-paper';
 import type { Room } from '@t/business';
 import useAddStudentForm from '../hooks/useAddStudentForm';
 import GenderSection from './GenderSection';
