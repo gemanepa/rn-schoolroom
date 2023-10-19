@@ -1,29 +1,26 @@
-import { StyleSheet, View, Text, Button } from 'react-native';
-import Counter from '@features/counter/components/Counter';
-import { useNavigation } from '@react-navigation/native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import type { RootStackParamList } from '../../../App';
+import { ScrollView } from 'react-native';
+import useNavigationHeader from '@lib/hooks/useNavigationHeader';
+import type { Room } from '@t/business';
+import { useAppSelector } from '@store/hooks';
+import Details from './components/Details';
+import AddStudentBtn from './components/AddStudentBtn';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 150,
-  },
-});
+function RoomDetailsScreen({ route }: { route: { params: Room } }) {
+  useNavigationHeader({ title: 'Room Details', goBack: true });
+  const room =
+    useAppSelector((state) => state.rooms.rooms).find(
+      (roomItem) => roomItem.roomId === route.params.roomId
+    ) || route.params;
 
-type RoomDetailsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'RoomDetails'>;
-
-function RoomDetailsScreen() {
-  const navigation = useNavigation<RoomDetailsScreenNavigationProp>();
   return (
-    <View style={styles.container}>
-      <Text>Add Student Screen</Text>
-      <Counter />
-      <Button title="Back to Rooms Overview" onPress={() => navigation.goBack()} />
-    </View>
+    <ScrollView
+      contentContainerStyle={{ alignItems: 'center', justifyContent: 'center' }}
+      className="flex-1 bg-white"
+    >
+      <Details room={room} />
+
+      <AddStudentBtn room={room} />
+    </ScrollView>
   );
 }
 

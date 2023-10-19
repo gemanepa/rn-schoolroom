@@ -1,28 +1,14 @@
-import { StyleSheet, View, Text, Button } from 'react-native';
-import Counter from '@features/counter/components/Counter';
-import { useNavigation } from '@react-navigation/native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import type { RootStackParamList } from '../../../App';
+import { View } from 'react-native';
+import useNavigationHeader from '@lib/hooks/useNavigationHeader';
+import type { Room } from '@t/business';
+import AddStudentForm from './components/AddStudentForm';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 150,
-  },
-});
+function AddStudentScreen({ route }: { route: { params: Room } }) {
+  useNavigationHeader({ title: 'Add new student', goBack: true });
 
-type AddStudentScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'AddStudent'>;
-
-function AddStudentScreen() {
-  const navigation = useNavigation<AddStudentScreenNavigationProp>();
   return (
-    <View style={styles.container}>
-      <Text>Add Student Screen</Text>
-      <Counter />
-      <Button title="Go to Room Details" onPress={() => navigation.goBack()} />
+    <View className="flex-1 items-center justify-center bg-white">
+      <AddStudentForm room={route.params} />
     </View>
   );
 }

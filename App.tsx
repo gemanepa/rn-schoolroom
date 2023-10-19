@@ -1,34 +1,26 @@
 import { Provider } from 'react-redux';
+import { PaperProvider } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { store } from '@store';
-import { NavigationContainer } from '@react-navigation/native';
-import RoomsOverviewScreen from '@screens/rooms-overview';
-import AddRoomScreen from '@screens/add-room';
+import { store } from '@store/index';
+import useMockData from '@lib/hooks/useMockData';
+import Navigation from '@screens/index';
 
-export type RootStackParamList = {
-  RoomsOverview: undefined;
-  RoomDetails: undefined;
-  AddRoom: undefined;
-  AddStudent: undefined;
-};
+function App() {
+  useMockData();
+  return (
+    <PaperProvider>
+      <StatusBar style="auto" />
+      <Navigation />
+    </PaperProvider>
+  );
+}
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
-
-export default function App() {
+function StoreProvider() {
   return (
     <Provider store={store}>
-      <StatusBar style="auto" />
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="RoomsOverview"
-            component={RoomsOverviewScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen name="AddRoom" component={AddRoomScreen} options={{ headerShown: false }} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <App />
     </Provider>
   );
 }
+
+export default StoreProvider;

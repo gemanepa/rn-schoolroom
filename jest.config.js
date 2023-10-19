@@ -6,8 +6,10 @@ module.exports = {
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   setupFiles: ['./tests/setup.js'],
   moduleNameMapper: {
-    '@store': '<rootDir>/src/store',
+    '@store/(.*)': '<rootDir>/src/store/$1',
+    '@lib/(.*)': '<rootDir>/src/lib/$1',
     '@features/(.*)': '<rootDir>/src/features/$1',
     '@screens/(.*)': '<rootDir>/src/screens/$1',
+    '@t/(.*)': '<rootDir>/types/$1',
   },
 };
