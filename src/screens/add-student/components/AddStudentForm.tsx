@@ -3,9 +3,9 @@ import { View, ScrollView } from 'react-native';
 import { TextInput, Text, Button, RadioButton, useTheme } from 'react-native-paper';
 import type { Room } from '@t/business';
 import useAddStudentForm from '../hooks/useAddStudentForm';
+import GenderSection from './GenderSection';
 
 function StudentForm({ room }: { room: Room }) {
-  const theme = useTheme();
   const { formState, validationErrors, handleChange, handleSubmit } = useAddStudentForm({ room });
 
   const renderTextInput = (field: 'studentId' | 'name' | 'age' | 'gender', label: string) => (
@@ -33,20 +33,7 @@ function StudentForm({ room }: { room: Room }) {
       {renderTextInput('name', 'Name')}
       {renderTextInput('age', 'Age')}
 
-      <Text className="text-base font-bold mb-2 mt-2">Gender</Text>
-      <View className="flex-row justify-between items-center mb-4 gap-2">
-        {['Male', 'Female', 'Other'].map((gender) => (
-          <RadioButton.Item
-            key={gender}
-            label={gender}
-            value={gender}
-            status={formState.gender === gender ? 'checked' : 'unchecked'}
-            onPress={() => handleChange('gender', gender)}
-            style={{ backgroundColor: theme.colors.secondaryContainer, borderRadius: 8 }}
-          />
-        ))}
-      </View>
-
+      <GenderSection genderState={formState.gender} handleChange={handleChange} />
       <Button mode="contained" onPress={handleSubmit} className="mt-7">
         Submit
       </Button>
