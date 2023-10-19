@@ -1,10 +1,13 @@
-<h1 id="schoolroom">SchoolRoom</h1>
-<div class="image-container">
-  <img src="https://raw.githubusercontent.com/gemanepa/rn-schoolroom/dev/assets/readme/1.gif" alt="running app 1">
-  <img src="https://raw.githubusercontent.com/gemanepa/rn-schoolroom/dev/assets/readme/2.gif" alt="running app 2">
-</div>
-<p>This is a MVP (Minimum Viable Product) in development phase for a school management software designed to help educational institutions manage their different classes and courses</p>
+<h1 id="schoolroom" align="center">SchoolRoom</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/gemanepa/rn-schoolroom/dev/assets/logo.png" alt="logo" >
+</p>
 
+<p>This is a MVP (Minimum Viable Product) in development phase for a school management software designed to help educational institutions manage their different classes and courses</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/gemanepa/rn-schoolroom/dev/assets/readme/1.gif" alt="running app 1" width="300">
+  <img src="https://raw.githubusercontent.com/gemanepa/rn-schoolroom/dev/assets/readme/2.gif" alt="running app 2" width="300">
+</p>
 <h2 id="tech-stack">Tech Stack</h2>
 <ul>
 <li><p>React Native + Expo</p></li>
