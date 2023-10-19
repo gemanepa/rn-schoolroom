@@ -9,7 +9,7 @@ function RoomsOverviewScreen() {
   return (
     <View className="flex-1 bg-white">
       <AddRoomBtn />
-      <View className="flex-1 items-center">
+      <View className="flex-1 items-center pb-8">
         <RoomsList />
       </View>
     </View>
