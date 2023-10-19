@@ -22,7 +22,7 @@ function RoomDetails({ room }: { room: Room }) {
   );
 
   return (
-    <View className="p-4 pb-2 pt-6">
+    <View className="p-4 pb-2 pt-6 w-[350px]">
       {roomItems}
       <RoomStudents students={students} />
     </View>
