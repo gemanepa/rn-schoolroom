@@ -1,28 +1,13 @@
-import { StyleSheet, View, Text, Button } from 'react-native';
-import Counter from '@features/counter/components/Counter';
-import { useNavigation } from '@react-navigation/native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import type { RootStackParamList } from '../../../App';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 150,
-  },
-});
-
-type AddRoomScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'AddRoom'>;
+import { View } from 'react-native';
+import useNavigationHeader from '@lib/hooks/useNavigationHeader';
+import AddRoomForm from './components/AddRoomForm';
 
 function AddRoomScreen() {
-  const navigation = useNavigation<AddRoomScreenNavigationProp>();
+  useNavigationHeader({ title: 'Add new room', goBack: true });
+
   return (
-    <View style={styles.container}>
-      <Text>Add Room Screen</Text>
-      <Counter />
-      <Button title="Go to Rooms Overview" onPress={() => navigation.goBack()} />
+    <View className="flex-1 pt-8 pl-5 pr-5 bg-white">
+      <AddRoomForm />
     </View>
   );
 }
