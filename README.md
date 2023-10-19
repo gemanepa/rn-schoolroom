@@ -50,26 +50,3 @@
 <li>Check for linting issues: <code>npm run lint</code>.</li>
 <li>Automatically fix some linting issues: <code>npm run lint:fix</code>.</li>
 </ul>
-
-<style>
-  .image-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .image-container img {
-    max-width: 50%; /* You can adjust this value as needed */
-    height: auto;
-    margin: 0 10px; /* Adjust the margin for spacing between the images */
-  }
-
-  @media (max-width: 768px) {
-    .image-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-</style>
-
-This code will display the images in a row on larger screens and in a column on smaller screens (such as mobile devices). The max-width property controls the size of the images, and you can adjust it as needed to make the images smaller or larger.
