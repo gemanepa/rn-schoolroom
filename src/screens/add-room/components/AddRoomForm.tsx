@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { Button } from 'react-native-paper';
 import useAddRoomForm from '../hooks/useAddRoomForm';
 import AddRoomTextInput from './AddRoomTextInput';
+import AddRoomSubmitBtn from './AddRoomSubmitBtn';
 
 function RoomForm() {
   const { state, dispatch, handleSubmit } = useAddRoomForm();
@@ -19,9 +19,7 @@ function RoomForm() {
       {renderTextInput('description', 'Description')}
       {renderTextInput('capacity', 'Capacity')}
       {renderTextInput('roomUsagePolicies', 'Room Usage Policies')}
-      <Button mode="contained" onPress={() => handleSubmit()}>
-        Submit
-      </Button>
+      <AddRoomSubmitBtn handleSubmit={handleSubmit} />
     </View>
   );
 }
