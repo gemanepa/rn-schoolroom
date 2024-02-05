@@ -50,3 +50,13 @@
 <li>Check for linting issues: <code>npm run lint</code>.</li>
 <li>Automatically fix some linting issues: <code>npm run lint:fix</code>.</li>
 </ul>
+
+<h2 id="project-guide">Update guide</h2>
+<p>To update the dependencies of the "SchoolRoom" project, consider the following tools:</p>
+<ol>
+<li>Highly Recommended: https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/</li>
+<li>https://docs.expo.dev/bare/upgrade</li>
+<li>Use with care after Expo Upgrade: https://www.npmjs.com/package/npm-check-updates Don't update libs updated by Expo</li>
+<li>If app doesn't run, this might help: https://react-native-community.github.io/upgrade-helper</li>
+<li>If app doesn't run, this might help: https://medium.com/game-development-stuff/how-to-easily-upgrade-react-native-and-the-project-dependencies-6af458ada81c</li>
+</ol>
